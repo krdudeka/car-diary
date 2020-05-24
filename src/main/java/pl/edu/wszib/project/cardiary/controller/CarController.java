@@ -9,12 +9,15 @@ import pl.edu.wszib.project.cardiary.dao.CarDao;
 @Controller
 public class CarController {
 
-    @GetMapping("car-diary")
-    public String carDiary(Model model) {
-        model.addAttribute("carName", "Samochód");
-        model.addAttribute("monthlyFuelCost", "500 zł");
-        model.addAttribute("monthlyCostOfRepairs", "500 zł");
-        return "car-diary";
+
+    @Autowired
+    private CarDao carDao;
+
+
+    @GetMapping
+    public String car(Model model) {
+        model.addAttribute("cardiary", carDao.getCar());
+        return "cardiary";
     }
 
 

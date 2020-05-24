@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dziennik samochodowy</title>
+    <link rel="stylesheet" href="../static/css/uikit.min.css" th:href="@{/css/uikit.min.css}">
+    <script th:src="@{/js/uikit.js}"></script>
+    <script th:src="@{/js/uikit-icons.js}"></script>
+</head>
+<body>
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-center">
+        <a th:href="@{/}" class="uk-navbar-item uk-logo">Dziennik Samochodowy</a>
+        <ul class="uk-navbar-nav">
+            <li class="li uk-parent"><a th:href="@{/data}">Dane</a></li>
+            <li class="li uk-parent"><a th:href="@{/diagrams}">Wykresy</a></li>
+            <li class="li uk-parent"><a th:href="@{/repairs}">Naprawy</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">
+            <h3 class="uk-card-title">Koszty paliwa</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+    </div>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">
+            <h3 class="uk-card-title">Koszty napraw</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+    </div>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">
+            <h3 class="uk-card-title">Suma kosztów</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
