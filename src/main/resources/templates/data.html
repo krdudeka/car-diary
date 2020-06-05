@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dziennik samochodowy</title>
+    <link rel="stylesheet" href="../static/css/uikit.min.css" th:href="@{/css/uikit.min.css}">
+    <script th:src="@{/js/uikit.js}"></script>
+    <script th:src="@{/js/uikit-icons.js}"></script>
+</head>
+<body>
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-center">
+        <a th:href="@{/}" class="uk-navbar-item uk-logo">Dziennik Samochodowy</a>
+        <ul class="uk-navbar-nav">
+            <li class="li uk-parent"><a th:href="@{/data}">Dane</a></li>
+            <li class="li uk-parent"><a th:href="@{/diagrams}">Wykresy</a></li>
+            <li class="li uk-parent"><a th:href="@{/repairs}">Naprawy</a></li>
+        </ul>
+    </div>
+</nav>
+<table class="uk-table uk-table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Data</th>
+        <th>Ilość paliwa</th>
+        <th>Cena jedn.</th>
+        <th>Wartość</th>
+        <th>Przebieg</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Table Data</td>
+        <td>Table Data</td>
+        <td>Table Data</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

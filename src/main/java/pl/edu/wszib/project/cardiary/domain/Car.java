@@ -3,6 +3,7 @@ package pl.edu.wszib.project.cardiary.domain;
 import java.util.Date;
 
 public class Car {
+    private Long id;
     private String name;
     private long mileage;
     private int carTank;
@@ -12,6 +13,14 @@ public class Car {
     private String description;
     private int monthlyFuelCost;
     private int monthlyCostOfRepairs;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public int getMonthlyFuelCost() {
         return monthlyFuelCost;
