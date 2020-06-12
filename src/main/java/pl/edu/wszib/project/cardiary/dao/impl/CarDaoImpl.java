@@ -1,4 +1,4 @@
-package pl.edu.wszib.project.cardiary.dao.impl;
+/*package pl.edu.wszib.project.cardiary.dao.impl;
 
 import org.springframework.stereotype.Repository;
 import pl.edu.wszib.project.cardiary.dao.CarDao;
@@ -13,4 +13,9 @@ public class CarDaoImpl implements CarDao {
     public List<Car> getCar() {
         return null;
     }
-}
+
+    @Override
+    public
+
+}*/
+

@@ -18,24 +18,32 @@
         </ul>
     </div>
 </nav>
-<table class="uk-table uk-table-striped">
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Data</th>
-        <th>Ilość paliwa</th>
-        <th>Cena jedn.</th>
-        <th>Wartość</th>
-        <th>Przebieg</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>Table Data</td>
-        <td>Table Data</td>
-        <td>Table Data</td>
-    </tr>
-    </tbody>
-</table>
+<div>
+    <a class="uk-button uk-button-default" th:href="@{data/new}" type="button">Nowa podróż</a>
+</div>
+<div class="uk-container" style="margin-top: 100px">
+    <table class="uk-table uk-table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Data</th>
+            <th>Ilość paliwa</th>
+            <th>Cena</th>
+            <th>Wartość</th>
+            <th>Przebieg</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="car: ${cars}">
+            <td th:text="${car.id}"></td>
+            <td th:text="${car.carTime}"></td>
+            <td th:text="${car.carTank}"></td>
+            <td th:text="${car.pricePerLiter}"></td>
+            <td th:text="${car.totalPrice}"></td>
+            <td th:text="${car.mileage}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
