@@ -19,7 +19,7 @@
     </div>
 </nav>
 <div class="uk-container" style="margin-top: 100px">
-    <form class="uk-form-horizontal uk-margin-large" th:object="${car}" th:action="@{/data/save}" method="post">
+    <form class="uk-form-horizontal uk-margin-large" th:action="@{/data/new}" method="post" action="#" th:object="${car}">
         <div class="uk-margin">
             <label class="uk-form-label" for="form-horizontal-text">Data</label>
             <div class="uk-form-controls">
@@ -29,28 +29,28 @@
         <div class="uk-margin">
             <label class="uk-form-label" for="form-horizontal-text">Ilość paliwa</label>
             <div class="uk-form-controls">
-                <input th:field="*{carTank}" class="uk-input" id="form-horizontal-text" type="number" step="0.01" min="0">
+                <input th:field="*{carTank}" class="uk-input" id="form-horizontal-text" type="number" step="0.01" min="0.00">
             </div>
         </div>
         <div class="uk-margin">
             <label class="uk-form-label" for="form-horizontal-text">Cena</label>
             <div class="uk-form-controls">
-                <input th:field="*{pricePerLiter}" class="uk-input" id="form-horizontal-text" type="number" step="0.01" min="0">
+                <input th:field="*{pricePerLiter}" class="uk-input" id="form-horizontal-text" type="number" step="0.01" min="0.00">
             </div>
         </div>
         <div class="uk-margin">
             <label class="uk-form-label" for="form-horizontal-text">Wartość</label>
-<!--            <div class="uk-form-controls">-->
-<!--                <input th:field="*{totalPrice}" class="uk-input" id="form-horizontal-text" type="number" step="0.01" min="0">-->
-<!--            </div>-->
+            <div class="uk-form-controls">
+                <input th:field="*{totalPrice}" class="uk-input" id="form-horizontal-text" type="number" step="0.01" min="0.00">
+            </div>
         </div>
         <div class="uk-margin">
             <label class="uk-form-label" for="form-horizontal-text">Przebieg</label>
             <div class="uk-form-controls">
-                <input th:field="*{mileage}" class="uk-input" id="form-horizontal-text" type="number" step="0.01" min="0">
+                <input th:field="*{mileage}" class="uk-input" id="form-horizontal-text" type="number" step="1" min="0">
             </div>
         </div>
-        <input th:field="*{id}" type="number" hidden>
+<!--        <input th:field="*{id}" type="number" hidden>-->
         <a th:href="@{/data}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
         <input type="submit" class="uk-button uk-button-primary" value="Zapisz">
     </form>

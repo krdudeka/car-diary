@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
@@ -22,10 +23,10 @@ public class Car {
     Date carTime;
 
     @Column(nullable = false)
-    int pricePerLiter;
+    BigDecimal pricePerLiter;
 
     @Column(nullable = false)
-    int totalPrice;
+    BigDecimal totalPrice;
 
     @Column(nullable = false)
     int mileage;
@@ -33,7 +34,7 @@ public class Car {
     public Car() {
     }
 
-    public Car(int carTank, Date carTime, int pricePerLiter, int mileage) {
+    public Car(int carTank, Date carTime, BigDecimal pricePerLiter, int mileage) {
         this.carTank = carTank;
         this.carTime = carTime;
         this.pricePerLiter = pricePerLiter;
@@ -64,19 +65,19 @@ public class Car {
         this.carTime = carTime;
     }
 
-    public int getPricePerLiter() {
+    public BigDecimal getPricePerLiter() {
         return pricePerLiter;
     }
 
-    public void setPricePerLiter(int pricePerLiter) {
+    public void setPricePerLiter(BigDecimal pricePerLiter) {
         this.pricePerLiter = pricePerLiter;
     }
 
-    public int getTotalPrice() {
+    public BigDecimal getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(int totalPrice) {
+    public void setTotalPrice(BigDecimal totalPrice) {
         this.totalPrice = totalPrice;
     }
 

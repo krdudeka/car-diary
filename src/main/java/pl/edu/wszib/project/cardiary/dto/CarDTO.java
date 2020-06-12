@@ -4,6 +4,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.PastOrPresent;
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class CarDTO {
@@ -18,10 +19,10 @@ public class CarDTO {
     Date carTime;
 
     @NotEmpty
-    int pricePerLiter;
+    BigDecimal pricePerLiter;
 
     @NotEmpty
-    int totalPrice;
+    BigDecimal totalPrice;
 
     @NotEmpty
     int mileage;
@@ -50,19 +51,19 @@ public class CarDTO {
         this.carTime = carTime;
     }
 
-    public int getPricePerLiter() {
+    public BigDecimal getPricePerLiter() {
         return pricePerLiter;
     }
 
-    public void setPricePerLiter(int pricePerLiter) {
+    public void setPricePerLiter(BigDecimal pricePerLiter) {
         this.pricePerLiter = pricePerLiter;
     }
 
-    public int getTotalPrice() {
+    public BigDecimal getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(int totalPrice) {
+    public void setTotalPrice(BigDecimal totalPrice) {
         this.totalPrice = totalPrice;
     }
 
