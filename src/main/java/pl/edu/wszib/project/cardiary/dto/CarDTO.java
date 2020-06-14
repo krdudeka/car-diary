@@ -12,7 +12,7 @@ public class CarDTO {
     int id;
 
     @NotEmpty
-    int carTank;
+    BigDecimal carTank;
 
     @PastOrPresent
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -35,11 +35,11 @@ public class CarDTO {
         this.id = id;
     }
 
-    public int getCarTank() {
+    public BigDecimal getCarTank() {
         return carTank;
     }
 
-    public void setCarTank(int carTank) {
+    public void setCarTank(BigDecimal carTank) {
         this.carTank = carTank;
     }
 

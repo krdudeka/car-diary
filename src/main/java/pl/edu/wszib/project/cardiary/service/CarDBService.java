@@ -2,6 +2,7 @@ package pl.edu.wszib.project.cardiary.service;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
+import pl.edu.wszib.project.cardiary.controller.ExceptionController;
 import pl.edu.wszib.project.cardiary.dao.CarDao;
 import pl.edu.wszib.project.cardiary.domain.Car;
 import pl.edu.wszib.project.cardiary.dto.CarDTO;
@@ -28,16 +29,15 @@ public class CarDBService implements CarService{
 
     @Override
     public CarDTO getCar(Integer id) {
-//        return dao.findById(id)
-//                .map(s -> mapper.toDTO(s))
-//                .orElseThrow(() -> new NotFoundException());
-        return null;
+        return dao.findById(id)
+                .map(s -> mapper.toDTO(s))
+                .orElseThrow(() -> new ExceptionController.NotFoundException());
     }
 
 
     @Override
     public void deleteCar(Integer id) {
-        dao.deleteById(getCar(id).getId());
+        dao.deleteById(id);
     }
 
     @Override
@@ -55,4 +55,5 @@ public class CarDBService implements CarService{
         updateCar.setTotalPrice(car.getTotalPrice());
         return mapper.toDTO(dao.save(updateCar));
     }
+
 }

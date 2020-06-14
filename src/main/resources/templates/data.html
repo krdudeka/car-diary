@@ -13,14 +13,14 @@
         <a th:href="@{/}" class="uk-navbar-item uk-logo">Dziennik Samochodowy</a>
         <ul class="uk-navbar-nav">
             <li class="li uk-parent"><a th:href="@{/data}">Dane</a></li>
-            <li class="li uk-parent"><a th:href="@{/diagrams}">Wykresy</a></li>
-            <li class="li uk-parent"><a th:href="@{/repairs}">Naprawy</a></li>
+            <li class="li uk-parent"><a th:href="@{/#}">Wykresy</a></li>
+            <li class="li uk-parent"><a th:href="@{/#}">Naprawy</a></li>
         </ul>
     </div>
 </nav>
 <div class="uk-container" style="margin-top: 100px">
     <div>
-        <a class="uk-button uk-button-default" th:href="@{data/new}" type="button">Nowa podróż</a>
+        <a class="uk-button uk-button-default" th:href="@{/data/new}" type="button">Nowa podróż</a>
     </div>
     <table class="uk-table uk-table-striped">
         <thead>
@@ -31,16 +31,24 @@
             <th>Cena</th>
             <th>Wartość</th>
             <th>Przebieg</th>
+            <th></th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="car: ${cars}">
             <td th:text="${car.id}"></td>
-            <td th:text="${car.carTime}"></td>
+            <td th:text="${car.carTime}" type="date" data-uk-datepicker="{format:'DD.MM.YYYY'}"></td>
             <td th:text="${car.carTank}"></td>
             <td th:text="${car.pricePerLiter}"></td>
             <td th:text="${car.totalPrice}"></td>
             <td th:text="${car.mileage}"></td>
+            <td>
+                <a class="uk-button uk-button-default" th:href="@{/data/edit/{id}(id = ${car.id})}" type="button">Edytuj</a>
+            </td>
+            <td>
+                <a class="uk-button uk-button-danger" th:href="@{/data/remove/{id}(id = ${car.id})}" type="button">Usuń</a>
+            </td>
         </tr>
         </tbody>
     </table>

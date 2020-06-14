@@ -1,5 +1,7 @@
 package pl.edu.wszib.project.cardiary.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,9 +19,10 @@ public class Car {
     int id;
 
     @Column(nullable = false)
-    int carTank;
+    BigDecimal carTank;
 
     @Column(nullable = false)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     Date carTime;
 
     @Column(nullable = false)
@@ -34,7 +37,7 @@ public class Car {
     public Car() {
     }
 
-    public Car(int carTank, Date carTime, BigDecimal pricePerLiter, int mileage) {
+    public Car(BigDecimal carTank, Date carTime, BigDecimal pricePerLiter, int mileage) {
         this.carTank = carTank;
         this.carTime = carTime;
         this.pricePerLiter = pricePerLiter;
@@ -49,11 +52,11 @@ public class Car {
         this.id = id;
     }
 
-    public int getCarTank() {
+    public BigDecimal getCarTank() {
         return carTank;
     }
 
-    public void setCarTank(int carTank) {
+    public void setCarTank(BigDecimal carTank) {
         this.carTank = carTank;
     }
 
