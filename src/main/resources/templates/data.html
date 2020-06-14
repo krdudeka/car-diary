@@ -38,7 +38,7 @@
         <tbody>
         <tr th:each="car: ${cars}">
             <td th:text="${car.id}"></td>
-            <td th:text="${car.carTime}" type="date" data-uk-datepicker="{format:'DD.MM.YYYY'}"></td>
+            <td th:text="${#calendars.format(car.carTime, 'dd.MM.YYYY')}"></td>
             <td th:text="${car.carTank}"></td>
             <td th:text="${car.pricePerLiter}"></td>
             <td th:text="${car.totalPrice}"></td>
